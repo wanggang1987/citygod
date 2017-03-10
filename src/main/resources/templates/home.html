@@ -12,14 +12,12 @@
 		th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
     </head>
     <body>
-		<div class="container">
-			<div class="jumbotron">
-				<img src="../static/images/wxqr.png" alt="test img"
-					 th:src="@{images/wxqr.png}"/>
-				<h1>Hello</h1>
-
-				<h2>Fellow Spring Framework Gurus!!!</h2>
-			</div>
+		<div class="jumbotron">
+			<img src="../static/images/wxqr.png" alt="test img"
+				 th:src="@{images/wxqr.png}"/>
+			<h1>Hello</h1>
+			<h2>Fellow Spring Framework Gurus!!!</h2>
 		</div>
+		<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
     </body>
 </html>
