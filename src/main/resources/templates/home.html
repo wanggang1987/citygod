@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" 
-	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Spring Security Example</title>
+		<link href="../static/css/main.css"
+			  th:href="@{css/main.css}" 
+			  rel="stylesheet" media="screen"/>
+		<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+			  th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+			  rel="stylesheet" media="screen" />
+		<script src="http://cdn.jsdelivr.net/webjars/jquery/3.1.1/jquery.min.js"
+		th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
     </head>
     <body>
-        <h1>Welcome!</h1>
+		<div class="container">
+			<div class="jumbotron">
+				<img src="../static/images/wxqr.png" alt="test img"
+					 th:src="@{images/wxqr.png}"/>
+				<h1>Hello</h1>
 
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+				<h2>Fellow Spring Framework Gurus!!!</h2>
+			</div>
+		</div>
     </body>
 </html>
