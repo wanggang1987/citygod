@@ -1,4 +1,4 @@
-package org.wanggang.citygod;
+package org.wanggang.citygod.common;
 
 import java.sql.Date;
 import lombok.Data;

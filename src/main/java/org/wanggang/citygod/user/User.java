@@ -1,6 +1,6 @@
 package org.wanggang.citygod.user;
 
-import org.wanggang.citygod.BasicObject;
+import org.wanggang.citygod.common.BasicObject;
 import lombok.Data;
 
 @Data
