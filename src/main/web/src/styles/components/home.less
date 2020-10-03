@@ -1,0 +1,495 @@
+/*省平台首页样式*/
+/*首页-地图展示*/
+.provinceHomePage {
+    ul {
+        &.indexul {
+            padding-left: 24px;
+            background: #fff;
+            box-shadow: 0px 3px 5px #eee;
+            position: relative;
+            z-index: 100;
+            li {
+                display: inline-block;
+                padding: 0 10px;
+                font-size: 14px;
+                a {
+                    border-bottom: 2px solid #fff;
+                    line-height: 46px;
+                    display: inline-block;
+                    padding: 0 3px;
+                    color: #5a5a5a;
+                }
+                &.router-link-exact-active {
+                    a {
+                        border-bottom: 2px solid #2059ef;
+                        color: #2059ef;
+                    }
+                }
+            }
+        }
+    }
+}
+/*首页-统计数据*/
+.panel2 {
+    background: #fff;
+    padding: 24px;
+    position: relative;
+    *zoom: 1;
+    margin-bottom: 24px;
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+    .title {
+        margin: -16px -24px 0 -24px;
+        border-bottom: 1px solid #e9e9e9;
+        color: #333333;
+        line-height: 52px;
+        padding: 0 24px;
+    }
+}
+.panel2:before, .panel2:after {
+    content: "";
+    display: table;
+}
+.statisticalData {
+    padding: 16px 16px 0px 16px;
+    height: ~"calc(100% - 54px)";
+    .title {
+        font-size: 16px;
+        font-weight: normal;
+        border: none;
+        color: #333;
+        border-bottom: 1px solid #f0f0f0;
+        a {
+            display: inline-block;
+            float: right;
+            font-size: 16px;
+            font-weight: normal;
+            color: #2059ef;
+        }
+        span {
+            font-weight: normal;
+        }
+    }
+}
+ul {
+    &.numberlist {
+        padding-top: 8px;
+        .number {
+            font-style: inherit;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            background: #f0f2f5;
+            border-radius: 50%;
+            font-size: 12px;
+            color: #5a5a5a;
+            margin-right: 16px;
+        }
+        li {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .value {
+            float: right;
+            height: 20px;
+            padding-right: 10px;
+        }
+        .listTitle {
+            display: inline-block;
+            width: ~"calc(100% - 120px)";
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            top: 4px;
+            cursor: pointer;
+        }
+        &.sliderList {
+            .slider {
+                display: inline-block;
+                height: 10px;
+                width: ~"calc(100% - 120px)";
+                position: absolute;
+                left: 90px;
+                top: 6px;
+                .sliderWidth {
+                    background: #a9afcb;
+                    heighbt: 100%;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    &.decoration {
+        li {
+            div {
+                &:hover {
+                    color: #2059ef;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &.indexVehicleList {
+        padding-top: 15px;
+        li {
+            width: ~"calc(20% - 70px)";
+            margin: 12px 35px;
+            float: left;
+            text-align: center;
+            background: #f8f8f8;
+            line-height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1);
+            }
+            & > div {
+                background: #f8c026;
+                line-height: 30px;
+                color: #333;
+                font-size: 14px;
+            }
+        }
+    }
+    &.index2VehicleList {
+        padding-top: 10px;
+        li {
+            width: ~"calc(50% - 30px)";
+            margin: 5px 15px 9px 15px;
+            float: left;
+            text-align: center;
+            background: rgba(248,192,38,0.2);
+            line-height: 30px;
+            font-size: 16px;
+            height: 64px;
+            & > div {
+                font-weight: bold;
+                background: #f8c026;
+                line-height: 30px;
+                color: #333;
+                font-size: 14px;
+            }
+        }
+    }
+    &.ivu-select-dropdown-list {
+        max-height: 200px;
+    }
+}
+ul.numberlist li:nth-child(1) .number, ul.numberlist li:nth-child(2) .number, ul.numberlist li:nth-child(3) .number {
+    background: #2059ef;
+    color: #fff;
+}
+ul.sliderList li:nth-child(1) .slider .sliderWidth, ul.sliderList li:nth-child(2) .slider .sliderWidth, ul.sliderList li:nth-child(3) .slider .sliderWidth {
+    background: #2059ef;
+    background: #2059ef;
+}
+.statisticalEcharts {
+    .titleFont {
+        font-size: 16px;
+        font-family: PingFangSC-Medium;
+        font-weight: 700;
+        border-bottom: 1px solid #e9e9e9;
+        line-height: 57px;
+        color: rgba(51,51,51,1);
+        padding-left: 22px;
+    }
+}
+.h492 {
+    height: 492px;
+}
+.dq_li {
+    li {
+        height: 28px;
+    }
+}
+.proHome {
+    .tree {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        height: 600px;
+        width: 310px;
+        border-radius: 4px 4px 0px 0px;
+        background: rgba(255,255,255,0.72);
+        box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.06);
+        .countData {
+            font-size: 14px;
+            font-family: PingFangSC-Regular;
+            font-weight: 500;
+            color: rgba(90,90,90,1);
+            line-height: 20px;
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-size: 16px;
+            width: 80%;
+            margin: auto;
+            color: #2059ef;
+        }
+        .firstDiv {
+            width: 290px;
+            height: 49px;
+            margin: 8px auto 0px;
+            border-bottom: 1px solid #d0d0d0;
+        }
+        .treeTitle {
+
+        }
+        .inputLine{
+            margin-bottom: 12px;
+            .treeTitle{
+                font-size: 14px;
+                color: #333;
+                line-height: 30px;
+                width: 88px;
+                text-align: right;
+                padding-right: 8px;
+            }
+        }
+    }
+    .ivu-tabs-bar {
+        margin-bottom: 1px;
+    }
+    .mapLab {
+        .labWap {
+            width: 96px;
+            border-radius: 16px;
+            background: #fff;
+            font-family: "Microsoft YaHei";
+            font-weight: 400;
+            color: #333;
+            line-height: 34px;
+        }
+        &::after {
+            content: " ";
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-top-color: #fff;
+            line-height: 0;
+            position: absolute;
+            left: 43px;
+        }
+    }
+    .BMap_mask {
+        & + div {
+            div {
+                &:nth-child(4) {
+                    z-index: 900 !important;
+                }
+            }
+        }
+    }
+    .vehicleInfoWap {
+        background: url("~@/assets/images/home/popBg.png") no-repeat;
+        padding-left: 6px;
+        border-radius: 4px;
+        width: 303px;
+        overflow: hidden;
+        .titleInfo {
+            padding: 13px 0;
+            & > div {
+                font-weight: bold;
+                color: #fff;
+                line-height: 20px;
+                & > span {
+                    width: 65px;
+                }
+            }
+            .annex {
+                width: 24px;
+                height: 24px;
+                right: 20px;
+                top: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+            }
+            .nail {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: #fff;
+                width: 24px;
+                height: 24px;
+                border-radius: 0 0 0 100%;
+                i {
+                    position: relative;
+                    color: #fff;
+                    font-size: 12px;
+                    top: -2px;
+                    left: 9px;
+                }
+                &.locked {
+                    background: #0e77ca;
+                    i {
+                        top: 4px;
+                        left: 4px;
+                    }
+                }
+            }
+        }
+        ul {
+            line-height: 20px;
+            color: #333;
+            font-size: 12px;
+            padding: 10px;
+            span {
+                width: 85px;
+                color: #666;
+            }
+        }
+        .btnWap {
+            border-top: 1px solid #f0f0f0;
+            border-radius: 0 0 4px 4px;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            a {
+                width: 100%;
+                font-size: 12px;
+                font-weight: 400;
+                color: #666;
+                background: #fff;
+                padding-bottom: 8px;
+                flex: 1;
+                .tag {
+                    position: absolute;
+                    top: 1px;
+                    left: 55%;
+                    background: #f5222d;
+                    min-width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    line-height: 18px;
+                    color: #fff;
+                    text-align: center;
+                }
+            }
+            i {
+                display: block;
+                font-size: 24px;
+                color: #ccc;
+                line-height: 40px;
+                &:hover {
+                    color: #108ee8;
+                }
+            }
+        }
+    }
+}
+.mapSearch {
+    width: 100%;
+    margin: 4px auto 5px;
+    display: block;
+}
+/*保证自定义覆盖层处于顶部*/
+.mapCheckBox {
+    .ivu-checkbox-group {
+        .ivu-checkbox-default {
+            margin-right: 0px;
+        }
+    }
+}
+
+.driverWindow {
+    .ivu-modal-body {
+        height: 509px;
+        overflow-y: scroll;
+    }
+}
+.operationMonitoring {
+    .BMap_stdMpCtrl {
+        top: 14px !important;
+        right: 0px !important;
+        left: auto !important;
+    }
+    .operationRadio {
+        position: absolute;
+        z-index: 3;
+        left: 16px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        border-radius: 7px;
+    }
+}
+.operationAlarms {
+    height: 40px;
+    position: absolute;
+    bottom: 15px;
+    z-index: 3;
+    padding: 4px 0px;
+    width: ~"calc(100% - 32px)";
+}
+.homeMap {
+    height: ~"calc(100% - 50px)";
+    padding: 16px;
+    position: relative;
+}
+.operationRadio2 {
+    height: 256px;
+    width: 64px;
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    z-index: 3;
+    .RadioBg {
+        height: 25%;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    .operationrclh {
+        line-height: 23px;
+        text-align: center;
+        width: 100%;
+    }
+}
+.bottombar {
+    & > .changeAlarmTypes {
+        padding-left: 12px;
+        border-right: 1px dotted #ccc;
+        height: 20px;
+        line-height: 13px;
+        margin-top: 6px;
+
+        &.on {
+            i {
+                color: #e02020;
+            }
+        }
+        &:first-child {
+            &.on {
+                i {
+                    color: #2059ef;
+                }
+            }
+        }
+    }
+    .changeAlarmTypes:last-child{border:none}
+    .labelLine {
+        position: relative;
+        top: 3px;
+        font-size: 14px;
+        color: #5a5a5a;
+        padding: 0 12px 0px 2px;
+        .num{
+            font-size: 18px;
+            font-weight: bold;
+            padding-left: 4px;
+            position: relative;
+            top: 1px;
+        }
+    }
+}
+.homeTable{
+    .ivu-table th{
+        background-color: #F2F2F2;
+    }
+    .ivu-table-row td {
+        border-bottom: 1px solid #E9E9E9;
+    }
+}

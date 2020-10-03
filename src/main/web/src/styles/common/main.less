@@ -1,0 +1,58 @@
+.contentWrapper{
+    height:100%;
+}
+.nav{
+    .pr24();
+    background: @nav-bg;
+    .logo,.menu{
+        .fl();
+    }
+    .logo{
+        .pl20();
+        line-height: 60px;
+        .logoImg{
+            .vam();
+        }
+    }
+
+    .avatar{
+        .fr();
+        .userAvatar{
+            .cursor();
+            .dib();
+            height: 60px;
+            line-height: 60px;
+        }
+        .personName{
+            .fs14();
+            .pl20();
+            padding-right:15px;
+            color:@nav-font-color;
+        }
+        .iconfont{
+            .fs22();
+            .cursor();
+            color:@nav-font-color;
+            line-height: 60px;
+            .vam();
+        }
+    }
+}
+
+.no-select{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.size{
+  width: 100%;
+  height: 100%;
+}
+
+.contents{
+    height: ~"calc(100% - 100px)";
+    overflow:auto;
+}
