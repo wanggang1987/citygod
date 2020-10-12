@@ -1,0 +1,63 @@
+.treeSelect {
+    width: 100%;
+    height: 32px;
+    .vam();
+    
+
+    .titlebar {
+        width: 100%;
+        border: 1px solid #cdcdcd;
+        height: 32px;
+        color: #333;
+        line-height: 20px; 
+        padding: 6px 0 6px 12px;
+    }
+    .simulationBtn {
+        background: rgba(230,230,230,1);
+        border-radius: 2px;
+        line-height: 20px;
+        height: 20px;
+        padding: 0 24px 0 4px;
+        color: #333;
+        max-width: ~"calc(100% - 32px)";
+        .ivu-icon {
+            top: 4px;
+            right: 4px;
+            cursor: pointer;
+            color: #999;
+        }
+    }
+    &.tree-select-disabled {
+        background-color: #f3f3f3;
+        opacity: 1;
+        cursor: not-allowed;
+
+        .ivu-icon {
+            cursor: not-allowed;
+        }
+    }
+}
+.treeSelectWrap {
+    max-height: 300px;
+    .treeSelectBody {
+        .pl8();
+        .pr8();
+        .ivu-tree {
+            max-height: 242px;
+            min-height: 100px;
+            overflow: auto;
+            ul {
+                font-size: 14px;
+            }
+        }
+    }
+}
+// 错误状态
+.ivu-form-item-error {
+    .treeSelect {
+        .titlebar{
+            border: 1px solid #e02020;
+        }
+    }
+}
+

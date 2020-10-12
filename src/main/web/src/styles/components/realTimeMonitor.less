@@ -1,0 +1,309 @@
+/*实时监控视频播放组件*/
+.videoPlayWarp {
+    .video-js {
+        width: 100%;
+        height: 100%;
+        background: none;
+    }
+}
+.realTimeVideo {
+    .video-js {
+        .vjs-progress-control {
+            height: 0;
+        }
+        .vjs-live-control {
+            height: 0;
+            overflow: hidden;
+        }
+    }
+}
+/*隐藏进度条(seekbar:false会导致js报错)*/
+
+
+/*日常监管 - 实时监控*/
+.videoNumChoose {
+    float: left;
+    height: 100%;
+    margin-left: 7px;
+}
+.provnceTreeWap {
+    height: 100%;
+    //border-bottom: 1px solid #f3f3f3;
+    .se {
+        height: 77px;
+        text-align: center;
+        border-top: 1px solid #f3f3f3;
+
+    }
+    .treeSelector {
+        
+        .treeWrapper {
+            height: ~"calc(100% - 75px)";
+            //border-bottom: 1px solid #e9e9e9;
+            overflow-y: auto;
+            .ivu-tree .ivu-checkbox-wrapper {
+                width: 17px;
+                margin-right: -2px;
+
+            }
+            .ivu-tree-title .whitespace{
+                margin-left: -4px !important;
+            }
+        }
+    }
+    .ivu-btn-primary.disabled, .ivu-btn-primary[disabled], fieldset[disabled] .ivu-btn-primary, .ivu-btn-primary.disabled:hover, .ivu-btn-primary[disabled]:hover, fieldset[disabled] .ivu-btn-primary:hover, .ivu-btn-primary.disabled:focus, .ivu-btn-primary[disabled]:focus, fieldset[disabled] .ivu-btn-primary:focus, .ivu-btn-primary.disabled:active, .ivu-btn-primary[disabled]:active, fieldset[disabled] .ivu-btn-primary:active, .ivu-btn-primary.disabled.active, .ivu-btn-primary[disabled].active, fieldset[disabled] .ivu-btn-primary.active {
+        background: #999;
+        color: #fff;
+        border-color: #999;
+    }
+}
+.manyVideoWrap {
+    padding-top: 12px;
+    position: relative;
+    .videoBlank {
+        width: 100%;
+        height: 100%;
+        float: left;
+        background-color: #333333;
+        text-align: center;
+        font-size: 15px;
+        color: #ccc;
+    }
+}
+.handClick {
+    cursor: pointer;
+}
+.videoWrap {
+    .videoList {
+        height: ~"calc(100% - 30px)";
+        padding-right: 12px;
+        padding-left: 4px;
+        li {
+            box-sizing: border-box;
+            padding: 0px 0px 8px 8px;
+            button.vjs-seek-to-live-control.vjs-control.vjs-at-live-edge{
+                display: none;
+            }
+            .video-js .vjs-control-bar{
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+.videoPlayWindow {
+    padding: 3px 0;
+    position: relative;
+    height: 238px;
+    .videoPlayBtn {
+        padding: 10px 0;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        button {
+            padding: 2px 4px !important;
+        }
+    }
+    .ivu-poptip-body {
+        max-height: 90px;
+        font-size: 14px;
+        overflow-y: auto;
+    }
+}
+
+
+#xuanfubutton {
+    .videoPlayWindow {
+        .ivu-poptip-popper[x-placement="bottom"] {
+            .ivu-poptip-arrow {
+                top: 0;
+                border-left-color: transparent;
+                &::after {
+                    border-left-color: transparent;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+.realTimevideoWrap {
+    &.videoWrap {
+        height: 100%;
+    }
+}
+.realTimevideoWrapBox {
+    min-height: 180px;
+    max-height: 400px;
+    position: absolute;
+    top: 38px;
+    bottom: 50px;
+    width: 100%;
+    & + .pageWap {
+        overflow: inherit;
+        .ivu-select-dropdown {
+            z-index: 999;
+        }
+    }
+}
+.realtimeVehicleMSG {
+    padding: 0px 24px;
+    margin-bottom: 24px;
+    overflow: hidden scroll;
+    min-height: 250px;
+    max-height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.videoWrap {
+    .videoPlayContent {
+        height: 100%;
+        background: #333333;
+        color: #fff;
+        height: 100%;
+        background: #333333;
+        color: #fff;
+    }
+    .videoPlayWarp {
+        width: 100%;
+        height: 100%;
+        .videoPlayBtn {
+            .videoBtn {
+                background: #000;
+                border-color: #000;
+                background: #000;
+                border-color: #000;
+            }
+            .ivu-poptip-popper {
+                min-width: 75px;
+                min-width: 75px;
+            }
+            .ivu-poptip {
+                &:hover {
+                    .videoBtn {
+                        background: #108ee8;
+                        border-color: #108ee8;
+                        background: #108ee8;
+                        border-color: #108ee8;
+                    }
+                }
+            }
+            .ivu-poptip-body {
+                padding: 5px;
+                max-height: 150px;
+                padding: 5px;
+                max-height: 150px;
+            }
+            .ivu-poptip-body-content {
+                li {
+                    padding: 2px 0;
+                    cursor: pointer;
+                    padding: 2px 0;
+                    cursor: pointer;
+                    &:hover {
+                        background: #d2eafb;
+                        background: #d2eafb;
+                    }
+                }
+            }
+        }
+    }
+    .videoPlayControl {
+        bottom: 0;
+        position: absolute;
+        background: rgb(0,0,0);
+        width: 100%;
+        z-index: 8;
+        .ivu-slider-wrap {
+            margin: 0;
+        }
+        a {
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-size: 20px;
+            padding: 0 11px;
+        }
+        .sliderVolume {
+            display: inline-block;
+            width: 50px;
+            padding-left: 10px;
+            .ivu-slider-wrap {
+                margin: 4px 0;
+            }
+            .ivu-slider-button-wrap {
+                top: -14px;
+            }
+        }
+    }
+}
+.tac {
+    &.pa {
+        a {
+            font-size: 30px !important;
+        }
+    }
+}
+
+
+/* 车辆监控 */
+.remvideo {
+    min-width: 527px;
+    max-width: 575px;
+    top: 8px;
+    background: #fff;
+    left: 8px;
+    height: calc(100% - 342px);
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    .rem-icon {
+        position: absolute;
+        color: #ccc;
+        font-size: 30px;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+    }
+    .remvideoTitle {
+        border-radius: 4px 4px 0px 0px;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+        margin-bottom: -3px;
+        span {
+            margin-left: 15px;
+            line-height: 40px;
+            font-size: 16px;
+            font-family: MicrosoftYaHei;
+            color: rgba(51,51,51,1);
+        }
+    }
+    .ivu-tabs {
+        .ivu-tabs-bar {
+            margin-bottom: 4px;
+        }
+    }
+    .carInfortion-rtm {
+        font-size: 14px;
+        font-weight: 900;
+        padding-bottom: 13px;
+    }
+    .carInfortion-span {
+        i {
+            width: 400px;
+            font-size: 14px;
+            font-family: 'Microsoft YaHei';
+            color: #333333;
+            font-style: normal;
+        }
+    }
+}
+.rem-carinfortion-div {
+    font-size: 14px;
+    font-weight: 900;
+    padding-bottom: 13px;
+    padding-top: 60px;
+}
