@@ -5,30 +5,16 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="1" author="Gang Wang">
-        <createTable tableName="user">
+        <createTable tableName="message">
             <column name="id" autoIncrement="true" type="bigint">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="createTime" type="timestamp"/>
             <column name="updateTime" type="timestamp"/>  
-            <column name="name" type="varchar(64)">
-                <constraints nullable="false" />
-            </column>
-        </createTable>
-    </changeSet>
-    
-    <changeSet id="2" author="Gang Wang">
-        <insert tableName="user">
-            <column name="name" value="test"/>
-        </insert>
-    </changeSet>
-    
-    <changeSet id="3" author="Gang Wang">
-        <addColumn tableName="user">
+            <column name="userId" type="bigint"/>
             <column name="nickName" type="varchar(64)"/>
-            <column name="longitude" type="decimal(10,7)"/>
-            <column name="latitude" type="decimal(10,7)"/>
-        </addColumn>
+            <column name="content" type="text"/>
+        </createTable>
     </changeSet>
 	
 </databaseChangeLog>

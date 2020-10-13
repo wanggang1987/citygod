@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.wanggang.citygod.sql;
+package org.wanggang.citygod.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -15,14 +15,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.wanggang.citygod.util.DomainUtils;
 
 /**
  *
  * @author wanggang
  */
 @RestController("/")
-public class SqlController {
+public class SqlUtil {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 

@@ -30,6 +30,18 @@ public class DomainUtils {
         mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
     }
 
+    public static String humpToUnderline(String propertyName) {
+        StringBuilder sb = new StringBuilder(propertyName);
+        int temp = 0;//定位
+        for (int i = 0; i < propertyName.length(); i++) {
+            if (Character.isUpperCase(propertyName.charAt(i))) {
+                sb.insert(i + temp, "_");
+                temp += 1;
+            }
+        }
+        return sb.toString().toLowerCase();
+    }
+
     public static <T> T json2bean(String json, Class<T> type) {
         try {
             return mapper.readValue(json, type);

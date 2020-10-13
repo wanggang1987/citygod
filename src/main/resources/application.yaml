@@ -1,0 +1,19 @@
+server:
+    port: 18080
+spring:
+    application:
+        name: CITYGOD
+    datasource:
+        initialSize: 20
+        maxActive: 50
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/citygod?useUnicode=true&characterEncoding=UTF-8&createDatabaseIfNotExist=true
+        username: root
+        password: 
+        testOnBorrow: true
+        validation-query: SELECT 1;
+    liquibase:
+        change-log: classpath:db/master.xml
+mybatis:
+    configuration:
+        map-underscore-to-camel-case: true

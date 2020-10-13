@@ -1,12 +1,12 @@
 package org.wanggang.citygod.common;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import lombok.Data;
 
 @Data
 public class BasicObject {
 
     private Long id;
-    private Date createTime;
-    private Date updateTime;
+    private Timestamp createTime;
+    private Timestamp updateTime;
 }
