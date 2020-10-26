@@ -30,5 +30,15 @@
             <column name="latitude" type="decimal(10,7)"/>
         </addColumn>
     </changeSet>
+    
+    <changeSet id="4" author="Gang Wang">
+        <addColumn tableName="user">
+            <column name="mobile" type="varchar(20)"/>
+            <column name="source" type="varchar(64)"/>
+        </addColumn>
+    </changeSet>
 	
+    <changeSet id="5" author="Gang Wang">
+        <dropColumn tableName="user" columnName="nickName"/>
+    </changeSet>
 </databaseChangeLog>

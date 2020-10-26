@@ -6,7 +6,7 @@
 package org.wanggang.citygod.message;
 
 import org.apache.ibatis.jdbc.SQL;
-import org.wanggang.citygod.common.PullRequest;
+import org.wanggang.citygod.common.RequestMessagePull;
 import org.wanggang.citygod.util.FunctionUtils;
 
 /**
@@ -15,7 +15,7 @@ import org.wanggang.citygod.util.FunctionUtils;
  */
 public class MessageProvider {
 
-    public String pull(PullRequest pullRequest) {
+    public String pull(RequestMessagePull pullRequest) {
         return new SQL() {
             {
                 SELECT("message.*");

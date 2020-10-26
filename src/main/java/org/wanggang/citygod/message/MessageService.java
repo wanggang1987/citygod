@@ -7,38 +7,36 @@ package org.wanggang.citygod.message;
 
 import java.sql.Timestamp;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.wanggang.citygod.common.PullRequest;
+import org.wanggang.citygod.common.RequestMessagePull;
 import org.wanggang.citygod.util.FunctionUtils;
 
 /**
  *
  * @author wanggang
  */
+@Slf4j
 @Service
 public class MessageService {
-
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private MessageMapper messageMapper;
 
-    public void insertOne(Message message) {
+    public void insertOneMessage(Message message) {
         if (FunctionUtils.isEmpty(message.getUserId())) {
             message.setUserId(0L);
         }
         if (FunctionUtils.isEmpty(message.getNickName())) {
-            message.setNickName("李雪琴");
+            message.setNickName("匿名用户");
         }
         message.setCreateTime(FunctionUtils.currentTime());
         message.setUpdateTime(FunctionUtils.currentTime());
         messageMapper.insert(message);
     }
 
-    public List<Message> pull(PullRequest pullRequest) {
+    public List<Message> pullMessages(RequestMessagePull pullRequest) {
         if (FunctionUtils.isEmpty(pullRequest.getLimit())
                 || pullRequest.getLimit() < 1
                 || pullRequest.getLimit() > 100) {

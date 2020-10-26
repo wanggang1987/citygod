@@ -12,7 +12,7 @@ import lombok.Data;
 public class User extends BasicObject {
 
     private String name;
-    private String nickName;
+    private String mobile;
     private String source;
     private BigDecimal longitude;
     private BigDecimal latitude;

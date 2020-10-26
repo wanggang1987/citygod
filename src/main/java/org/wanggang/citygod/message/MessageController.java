@@ -5,44 +5,48 @@
  */
 package org.wanggang.citygod.message;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.wanggang.citygod.common.CommonResponse;
-import org.wanggang.citygod.common.PullRequest;
+import org.wanggang.citygod.common.ResponseCommon;
+import org.wanggang.citygod.common.RequestMessagePull;
 import org.wanggang.citygod.util.DomainUtils;
 
 /**
  *
  * @author wanggang
  */
+@Api(tags = "消息模块")
+@Slf4j
 @RestController
 @RequestMapping("message")
 public class MessageController {
 
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private MessageService messageService;
 
+    @ApiOperation(value = "发送消息", notes = "只接受一条消息")
     @PostMapping("send")
-    public CommonResponse sendMessage(@RequestBody Message message) {
+    public ResponseCommon sendMessage(@RequestBody Message message) {
         log.info(DomainUtils.bean2json(message));
 
-        messageService.insertOne(message);
-        return CommonResponse.success();
+        messageService.insertOneMessage(message);
+        return ResponseCommon.success();
     }
 
+    @ApiOperation(value = "拉取消息", notes = "按时间倒序返回最新消息list，不超过100条")
     @GetMapping("pull")
-    public CommonResponse pullMessage(PullRequest pullRequest) {
+    public ResponseCommon pullMessage(RequestMessagePull pullRequest) {
         log.info(DomainUtils.bean2json(pullRequest));
 
-        List<Message> list = messageService.pull(pullRequest);
-        return CommonResponse.success(list);
+        List<Message> list = messageService.pullMessages(pullRequest);
+        return ResponseCommon.success(list);
     }
 }
