@@ -46,7 +46,7 @@ public class SqlUtil {
                     sql = sql.replace(";", " limit 100;");
                 }
                 log.info(sql);
-                str = DomainUtils.bean2json(jdbcTemplate.queryForList(sql));
+                str = BeanUtils.bean2json(jdbcTemplate.queryForList(sql));
             }
         } catch (DataAccessException e) {
             log.error(e.getMessage());

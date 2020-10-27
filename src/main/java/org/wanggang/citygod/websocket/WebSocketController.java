@@ -9,7 +9,10 @@ import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
+import org.wanggang.citygod.message.Message;
+import org.wanggang.citygod.common.BeanContainer;
+import org.wanggang.citygod.util.BeanUtils;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,8 +24,8 @@ import org.springframework.stereotype.Controller;
  * @author wanggang
  */
 @Slf4j
-@Controller
-@ServerEndpoint(value = "/websocket")
+@Component
+@ServerEndpoint(value = "/websocket/{userId}")
 public class WebSocketController {
 
     @OnOpen
@@ -38,9 +41,11 @@ public class WebSocketController {
     }
 
     @OnMessage
-    public void OnMessage(@PathParam(value = "usernick") String userNick, String message) {
-        log.info("user message: " + message);
-        WebSocketUtil.sendMessageForAll(message);
+    public void OnMessage(@PathParam(value = "userId") Long userId, Session session, String messageString) {
+        log.info("user message: " + messageString);
+        Message message = BeanUtils.json2bean(messageString, Message.class);
+        BeanContainer.getMessageService().insertOneMessage(message);
+        WebSocketUtil.sendMessageForAll(userId, session, message);
     }
 
     @OnError

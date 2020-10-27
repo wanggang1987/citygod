@@ -13,20 +13,20 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.dbutils.BeanProcessor;
 
 /**
  *
  * @author wanggang
  */
-public class DomainUtils {
+@Slf4j
+public class BeanUtils {
 
     private final static ObjectMapper mapper = new ObjectMapper();
     private final static BeanProcessor bp = new BeanProcessor();
 
-    public DomainUtils() {
+    public BeanUtils() {
         mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
     }
 
@@ -46,7 +46,7 @@ public class DomainUtils {
         try {
             return mapper.readValue(json, type);
         } catch (IOException e) {
-            Logger.getLogger(DomainUtils.class.getName()).log(Level.SEVERE, null, e);
+            log.error(e.getMessage());
         }
         return null;
     }
@@ -63,7 +63,7 @@ public class DomainUtils {
         try {
             return mapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
-            Logger.getLogger(DomainUtils.class.getName()).log(Level.SEVERE, null, e);
+            log.error(e.getMessage());
         }
         return null;
     }
@@ -73,9 +73,7 @@ public class DomainUtils {
             String jsonString = mapper.writeValueAsString(object);
             return mapper.readTree(jsonString);
         } catch (JsonProcessingException e) {
-            Logger.getLogger(DomainUtils.class.getName()).log(Level.SEVERE, null, e);
-        } catch (IOException ex) {
-            Logger.getLogger(DomainUtils.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(e.getMessage());
         }
         return null;
     }
@@ -84,7 +82,7 @@ public class DomainUtils {
         try {
             return (T) bp.toBean(rs, type);
         } catch (SQLException e) {
-            Logger.getLogger(DomainUtils.class.getName()).log(Level.SEVERE, null, e);
+            log.error(e.getMessage());
         }
         return null;
     }

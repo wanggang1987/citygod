@@ -21,15 +21,22 @@ import org.wanggang.citygod.util.FunctionUtils;
 @Service
 public class MessageService {
 
+    private final Long defaultId = 0L;
+    private final String defaultUser = "匿名用户";
+    private final String defaultTopic = "附近的人";
+
     @Autowired
     private MessageMapper messageMapper;
 
     public void insertOneMessage(Message message) {
         if (FunctionUtils.isEmpty(message.getUserId())) {
-            message.setUserId(0L);
+            message.setUserId(defaultId);
         }
         if (FunctionUtils.isEmpty(message.getNickName())) {
-            message.setNickName("匿名用户");
+            message.setNickName(defaultUser);
+        }
+        if (FunctionUtils.isEmpty(message.getTopic())) {
+            message.setTopic(defaultTopic);
         }
         message.setCreateTime(FunctionUtils.currentTime());
         message.setUpdateTime(FunctionUtils.currentTime());
@@ -41,6 +48,9 @@ public class MessageService {
                 || pullRequest.getLimit() < 1
                 || pullRequest.getLimit() > 100) {
             pullRequest.setLimit(100L);
+        }
+        if (FunctionUtils.isEmpty(pullRequest.getTopic())) {
+            pullRequest.setTopic(defaultTopic);
         }
         if (FunctionUtils.isEmpty(pullRequest.getStarTime())) {
             pullRequest.setStarTime(new Timestamp(0));

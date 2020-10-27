@@ -20,9 +20,7 @@ public class SqlProvider {
         if (field.isAnnotationPresent(Column.class)) {
             return field.getAnnotation(Column.class).name();
         }
-//        if (true) {
-//            return DomainUtils.humpToUnderline(field.getName());
-//        }
+//        return BeanUtils.humpToUnderline(field.getName());
         return field.getName();
     }
 
@@ -209,7 +207,7 @@ public class SqlProvider {
 
     private List<Field> getColumn(Object obj) {
         List<Field> fields = getField(obj);
-        log.debug("column info : {}", DomainUtils.bean2json(fields));
+        log.debug("column info : {}", BeanUtils.bean2json(fields));
         return fields;
     }
 

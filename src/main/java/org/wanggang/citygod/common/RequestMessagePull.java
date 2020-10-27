@@ -15,7 +15,7 @@ import lombok.Data;
  *
  * @author wanggang
  */
-@ApiModel(description="拉取消息请求")
+@ApiModel(description = "拉取消息请求")
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestMessagePull {
@@ -26,4 +26,5 @@ public class RequestMessagePull {
     private Timestamp starTime;
     @ApiModelProperty(value = "结束时间")
     private Timestamp endTime;
+    private String topic;
 }

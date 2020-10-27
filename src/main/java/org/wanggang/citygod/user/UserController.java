@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.wanggang.citygod.common.ResponseCommon;
-import org.wanggang.citygod.util.DomainUtils;
+import org.wanggang.citygod.util.BeanUtils;
 
 /**
  *
@@ -28,7 +28,7 @@ public class UserController {
 
     @PostMapping("create")
     public ResponseCommon createUser(@RequestBody User user) {
-        log.info(DomainUtils.bean2json(user));
+        log.info(BeanUtils.bean2json(user));
 
         return ResponseCommon.response(userService.createUser(user));
     }

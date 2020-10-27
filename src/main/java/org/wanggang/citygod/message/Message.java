@@ -16,7 +16,7 @@ import org.wanggang.citygod.common.BasicObject;
  *
  * @author wanggang
  */
-@ApiModel(description="消息结构体")
+@ApiModel(description = "消息结构体")
 @Data
 @Table(name = "message")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -28,4 +28,5 @@ public class Message extends BasicObject {
     private String nickName;
     @ApiModelProperty(value = "消息内容")
     private String content;
+    private String topic;
 }
