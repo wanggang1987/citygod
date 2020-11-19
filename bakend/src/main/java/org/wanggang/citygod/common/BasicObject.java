@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.sql.Timestamp;
 import lombok.Data;
 
-@ApiModel(description="数据库对象依赖的基础字段")
+@ApiModel(description = "数据库对象依赖的基础字段")
 @Data
 public class BasicObject {
 

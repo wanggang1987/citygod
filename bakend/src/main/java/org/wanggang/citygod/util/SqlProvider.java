@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 public class SqlProvider {
 
     private final Logger log = LoggerFactory.getLogger(SqlProvider.class);
-    private static final ConcurrentHashMap<String, String> tableMap = new ConcurrentHashMap();
+    private static final ConcurrentHashMap<String, String> tableMap = new ConcurrentHashMap<String, String>();
 
     private String fieldName(Field field) {
         if (field.isAnnotationPresent(Column.class)) {
