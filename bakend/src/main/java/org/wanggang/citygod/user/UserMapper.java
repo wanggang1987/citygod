@@ -5,7 +5,6 @@
  */
 package org.wanggang.citygod.user;
 
-import org.wanggang.citygod.message.*;
 import java.util.List;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.InsertProvider;
@@ -13,6 +12,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.UpdateProvider;
+import org.wanggang.citygod.message.Message;
 import org.wanggang.citygod.util.SqlProvider;
 
 /**

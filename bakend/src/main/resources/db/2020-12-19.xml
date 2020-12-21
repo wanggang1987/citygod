@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    
-    <include file="db/2017-11-01.xml"/>
-    <include file="db/2020-10-13.xml"/>
-    <include file="db/2020-10-27.xml"/>
-    <include file="db/2020-12-19.xml"/>
-    
+
+    <changeSet id="1" author="Gang Wang">
+       <addColumn tableName="user">
+        <column name="targetId" type="bigint"/>
+       </addColumn>
+    </changeSet>
+   
 </databaseChangeLog>

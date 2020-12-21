@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.math.BigDecimal;
 import javax.persistence.Table;
 import org.wanggang.citygod.common.BasicObject;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 @Table(name = "user")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User extends BasicObject {

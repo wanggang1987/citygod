@@ -41,7 +41,7 @@ public class MessageController {
         return ResponseCommon.success();
     }
 
-    @ApiOperation(value = "拉取消息", notes = "按时间倒序返回最新消息list，不超过100条")
+    @ApiOperation(value = "拉取群聊消息", notes = "按时间倒序返回最新消息list，不超过100条")
     @GetMapping("pull")
     public ResponseCommon pullMessage(RequestMessagePull pullRequest) {
         log.info(BeanUtils.bean2json(pullRequest));
