@@ -7,7 +7,6 @@ package org.wanggang.citygod.message;
 
 import java.sql.Timestamp;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.wanggang.citygod.common.RequestMessagePull;
@@ -17,7 +16,6 @@ import org.wanggang.citygod.util.FunctionUtils;
  *
  * @author wanggang
  */
-@Slf4j
 @Service
 public class MessageService {
     
