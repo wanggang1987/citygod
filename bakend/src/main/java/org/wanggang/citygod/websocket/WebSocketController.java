@@ -41,7 +41,7 @@ public class WebSocketController {
     }
 
     @OnMessage
-    public void OnMessage(@PathParam(value = "userId") Long userId, Session session, String messageString) {
+    public void onMessage(@PathParam(value = "userId") Long userId, Session session, String messageString) {
         log.info("user message: " + messageString);
         Message message = BeanUtils.json2bean(messageString, Message.class);
         BeanContainer.getMessageService().insertOneMessage(message);
